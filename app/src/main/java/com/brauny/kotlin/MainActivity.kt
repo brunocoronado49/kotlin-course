@@ -14,6 +14,70 @@ class MainActivity : AppCompatActivity() {
         sentenceWhen()
         arrays()
         maps()
+        loops()
+        nullSafety()
+        stringFun() // Hello World
+        intFunction() // 24
+        addFun(23, 52) // 75
+    }
+
+    // Functions
+    private fun stringFun() : String {
+        return "Hello World"
+    }
+
+    private fun intFunction() : Int {
+        return 24
+    }
+
+    private fun addFun(numberA: Int, numberB: Int) : Int {
+        return numberA + numberB
+    }
+
+    // Nullsafety
+    private fun nullSafety() {
+        var myStrig: String? = "Francisco"
+        myStrig = null
+        println(myStrig)
+
+        var myIntSafety: Int? = 0
+        myIntSafety = null
+        println(myIntSafety)
+
+        println(myStrig?.length)
+
+        myStrig?.let {
+            // println(myStrig)
+        } ?: run {
+            println(this)
+        }
+    }
+
+    // Loops for - while
+    private fun loops() {
+        // For
+        val myArray: List<String> = listOf("bruno", "francisco", "maria", "jonas")
+        val myMap: MutableMap<String, Int> = mutableMapOf("brauny" to 1, "bruce" to 2, "franco" to 3)
+
+        for (myString: String in myArray) {
+            println(myString) // Each data of myArray
+        }
+
+        for (myElement in myMap) {
+            println("${myElement.key} - ${myElement.value}") // brauny - 1 ...
+        }
+
+        for (num in 0..10) {
+            println(num)
+        }
+
+        // While
+        var age: Int = 0
+
+        while (age < 30) {
+            age++
+            println(age)
+        }
     }
 
     // Maps in Kotlin
