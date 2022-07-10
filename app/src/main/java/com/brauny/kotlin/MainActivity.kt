@@ -12,6 +12,74 @@ class MainActivity : AppCompatActivity() {
         dataType()
         sentenceIf()
         sentenceWhen()
+        arrays()
+        maps()
+    }
+
+    // Maps in Kotlin
+    private fun maps() {
+        var myMap: Map<String, Int> = mapOf()
+        var myMutableMap: Map<String, Int> = mapOf()
+        println(myMap) // {}
+        println(myMutableMap) // {}
+
+        // Map not mutable
+        myMap = mapOf("Bruce" to 24, "Francisco" to 50)
+        println(myMap)
+
+        // Map mutable
+        myMutableMap = mutableMapOf()
+        myMutableMap["Ana"] = 10
+        myMutableMap.put("Maria", 14)
+        println(myMutableMap)
+
+    }
+
+    // Arrays in Kotlin
+    private fun arrays() {
+        // The arrays in kotlin only accept one type of data in array
+        val name: String = "Bruce"
+        val rol: String = "front dev"
+        val age: String = "24"
+        val company: String = "Google"
+
+        // array
+        val myArray = arrayListOf<String>(name, rol, age, company)
+        println(myArray)
+
+        // Add one element
+        val myAnotherArray = arrayListOf<Number>()
+        myAnotherArray.add(20)
+        myAnotherArray.add(33)
+        myAnotherArray.add(56)
+        myAnotherArray.add(12)
+        myAnotherArray.add(12)
+        println(myAnotherArray)
+
+        // Add more elements
+        myAnotherArray.addAll(listOf(99, 76, 54))
+        println(myAnotherArray)
+
+        // Access to one element
+        val myName: String = myArray[0]
+        println(myName)
+
+        // Rename one element
+        myArray[3] = "The big company"
+        println(myArray[3])
+
+        // touring the array
+        myArray.forEach {
+            println(it)
+        }
+        myAnotherArray.map {
+            print(it)
+        }
+
+        // Take one elemnent
+        myArray.first() // Take the first element
+        myArray.last() // Take the last element
+
     }
 
     // Sentence when
